@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:get/get.dart';
 import 'package:koifarm/models/get.dart';
 //import 'package:get/get.dart';
 
 class ParameterPage extends StatefulWidget {
-  const ParameterPage({super.key});
+  ParameterPage({super.key});
 
   @override
   State<ParameterPage> createState() => _ParameterPageState();
 }
 
 class _ParameterPageState extends State<ParameterPage> {
+  MainScreenController _controller = Get.put(MainScreenController());
+
   @override
   Widget build(BuildContext context) {
     double heating = 12;
@@ -49,12 +52,13 @@ class _ParameterPageState extends State<ParameterPage> {
                       percent: 0.75,
                       progressColor: Colors.red,
                       center: const Text(
-                        '26\u00B0',
+                        '',
                         style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
+                      //Obx(() => Text('${_controller.counter.value}',))
                     ),
                     const SizedBox(height: 24),
                     const Center(
@@ -66,7 +70,15 @@ class _ParameterPageState extends State<ParameterPage> {
                     ),
                     const SizedBox(height: 32),
                     Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      _roundedButton(title: 'Tambah Suhu', isActive: true),
+                      //   _roundedButton(
+                      //       isActive: true,
+                      //       FloatingActionButton(
+                      //           onPressed: () => _controller.increment())
+                      // ),
+                      FloatingActionButton(
+                        onPressed: _controller.increment,
+                        child: const Icon(Icons.add),
+                      )
                     ]),
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 18),
@@ -194,8 +206,8 @@ class _ParameterPageState extends State<ParameterPage> {
     );
   }
 
-  Widget _roundedButton({
-    required String title,
+  Widget _roundedButton(
+    String title, {
     bool isActive = false,
   }) {
     return Container(
