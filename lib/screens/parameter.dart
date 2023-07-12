@@ -63,6 +63,9 @@ class _ParameterPageState extends State<ParameterPage> {
                       ),
                     ),
                     const SizedBox(height: 32),
+                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+                      _roundedButton(title: 'Tambah Suhu', isActive: true),
+                    ]),
                     Container(
                       padding: const EdgeInsets.symmetric(vertical: 18),
                       decoration: BoxDecoration(
@@ -186,6 +189,29 @@ class _ParameterPageState extends State<ParameterPage> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _roundedButton({
+    required String title,
+    bool isActive = false,
+  }) {
+    return Container(
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 32,
+      ),
+      decoration: BoxDecoration(
+        color: isActive ? Colors.indigo : Colors.transparent,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(color: Colors.indigo),
+      ),
+      child: Text(
+        title,
+        style: TextStyle(
+          color: isActive ? Colors.white : Colors.black,
+        ),
+      ),
     );
   }
 }
