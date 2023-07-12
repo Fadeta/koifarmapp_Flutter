@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:koifarm/models/get.dart';
+//import 'package:get/get.dart';
 
 class ParameterPage extends StatefulWidget {
   const ParameterPage({super.key});
