@@ -51,14 +51,15 @@ class _ParameterPageState extends State<ParameterPage> {
                       lineWidth: 14,
                       percent: 0.75,
                       progressColor: Colors.red,
-                      center: const Text(
-                        '',
-                        style: TextStyle(
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
+                      center: Obx(
+                        () => Text(
+                          '${_controller.counter.value}',
+                          style: const TextStyle(
+                            fontSize: 62,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
-                      //Obx(() => Text('${_controller.counter.value}',))
                     ),
                     const SizedBox(height: 24),
                     const Center(
