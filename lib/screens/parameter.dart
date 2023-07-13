@@ -5,14 +5,14 @@ import 'package:koifarm/models/get.dart';
 //import 'package:get/get.dart';
 
 class ParameterPage extends StatefulWidget {
-  ParameterPage({super.key});
+  const ParameterPage({super.key});
 
   @override
   State<ParameterPage> createState() => _ParameterPageState();
 }
 
 class _ParameterPageState extends State<ParameterPage> {
-  MainScreenController _controller = Get.put(MainScreenController());
+  final MainScreenController _controller = Get.put(MainScreenController());
 
   @override
   Widget build(BuildContext context) {
