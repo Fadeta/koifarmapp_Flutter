@@ -121,9 +121,9 @@ class _HomePageState extends State<HomePage> {
 }
 
 // This is a block of Model Dialog
-// showDialogFunc(context, img, title, desc) {
+// showDialogFunc(dataJson) {
 //   return showDialog(
-//     context: context,
+//     context: dataJson,
 //     builder: (context) {
 //       return Center(
 //         child: Material(
@@ -142,7 +142,7 @@ class _HomePageState extends State<HomePage> {
 //                 ClipRRect(
 //                   borderRadius: BorderRadius.circular(5),
 //                   child: Image.asset(
-//                     img,
+//                     dataJson,
 //                     width: 200,
 //                     height: 200,
 //                   ),
@@ -151,7 +151,7 @@ class _HomePageState extends State<HomePage> {
 //                   height: 10,
 //                 ),
 //                 Text(
-//                   title,
+//                   dataJson,
 //                   style: const TextStyle(
 //                     fontSize: 25,
 //                     color: Colors.grey,
@@ -166,7 +166,7 @@ class _HomePageState extends State<HomePage> {
 //                   child: Align(
 //                     alignment: Alignment.center,
 //                     child: Text(
-//                       desc,
+//                       dataJson,
 //                       maxLines: 3,
 //                       style: TextStyle(fontSize: 15, color: Colors.grey[500]),
 //                       textAlign: TextAlign.center,
