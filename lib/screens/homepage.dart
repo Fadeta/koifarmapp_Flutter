@@ -11,6 +11,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _api();
+  }
+
   var dataJson;
   int totalData = 0;
   void _api() async {
@@ -29,37 +36,11 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  // var titleList = [
-  //   "Kohaku",
-  //   "Showa",
-  //   "Tancho",
-  //   "Goromo",
-  //   "Utsuri",
-  //   "Shiro",
-  //   "Chagoi"
-  // ];
+  List<dynamic> data = [];
+  bool isLoading = true;
 
-  // // Description List Here
-  // var descList = [
-  //   "Total : 350",
-  //   "Total : 200",
-  //   "Total : 600",
-  //   "Total : 500",
-  //   "Total : 100",
-  //   "Total : 50",
-  //   "Total : 60"
-  // ];
-
-  // // Image Name List Here
-  // var imgList = [
-  //   "assets/images/kohaku1.jpg",
-  //   "assets/images/showa1.jpg",
-  //   "assets/images/tancho1.jpg",
-  //   "assets/images/goromo1.jpg",
-  //   "assets/images/utsuri1.jpg",
-  //   "assets/images/shiro1.jpg",
-  //   "assets/images/chagoi1.jpg"
-  // ];
+  final jenisController = TextEditingController();
+  final namaController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
