@@ -71,7 +71,7 @@ class _HomePageState extends State<Params> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ParameterPage(),
+                                builder: (context) => const ParameterPage(),
                               ),
                             );
                           },

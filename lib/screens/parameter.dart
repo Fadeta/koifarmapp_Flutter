@@ -50,7 +50,7 @@ class _ParameterPageState extends State<ParameterPage> {
                       radius: 180,
                       lineWidth: 14,
                       percent: 0.75,
-                      progressColor: Colors.red,
+                      progressColor: Colors.blue,
                       center: Obx(
                         () => Text(
                           '${_controller.counter.value}',
@@ -66,19 +66,19 @@ class _ParameterPageState extends State<ParameterPage> {
                       child: Text(
                         'TEMPERATURE',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black54),
+                            fontWeight: FontWeight.bold, color: Colors.black),
                       ),
                     ),
-                    const SizedBox(height: 32),
-                    Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      //   _roundedButton(
-                      //       isActive: true,
-                      //       FloatingActionButton(
-                      //           onPressed: () => _controller.increment())
-                      // ),
-                      FloatingActionButton(
-                        onPressed: _controller.increment,
-                        child: const Icon(Icons.add),
+                    // const SizedBox(height: 32),
+                    Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+                      Padding(
+                        padding: const EdgeInsets.all(10),
+                        child: FloatingActionButton(
+                          onPressed: _controller.increment,
+                          child: const Icon(
+                            Icons.add,
+                          ),
+                        ),
                       )
                     ]),
                     Container(
@@ -164,8 +164,8 @@ class _ParameterPageState extends State<ParameterPage> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        _temp(title: 'TEMP 1', isActive: true),
-                        _temp(title: 'TEMP 2', isActive: true),
+                        _temp(title: 'TEMP 1'),
+                        _temp(title: 'TEMP 2'),
                         _temp(title: 'TEMP 3'),
                       ],
                     ),
