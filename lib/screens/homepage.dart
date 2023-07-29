@@ -1,10 +1,8 @@
-import 'dart:convert';
 import 'package:koifarm/API/network.dart';
 import 'package:koifarm/API/koi_model.dart';
 import 'package:koifarm/API/model.dart';
 
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
