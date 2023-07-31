@@ -158,7 +158,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 TextFormField(
                   controller: imageController,
-                  maxLength: 100,
                   decoration: const InputDecoration(
                     labelText: 'Insert Image Link',
                     labelStyle: TextStyle(
@@ -234,68 +233,3 @@ class _HomePageState extends State<HomePage> {
     }
   }
 }
-
-
-
-
-// This is a block of Model Dialog
-// showDialogFunc(dataJson) {
-//   return showDialog(
-//     context: dataJson,
-//     builder: (context) {
-//       return Center(
-//         child: Material(
-//           type: MaterialType.transparency,
-//           child: Container(
-//             decoration: BoxDecoration(
-//               borderRadius: BorderRadius.circular(10),
-//               color: Colors.white,
-//             ),
-//             padding: const EdgeInsets.all(15),
-//             height: 320,
-//             width: MediaQuery.of(context).size.width * 0.7,
-//             child: Column(
-//               crossAxisAlignment: CrossAxisAlignment.center,
-//               children: <Widget>[
-//                 ClipRRect(
-//                   borderRadius: BorderRadius.circular(5),
-//                   child: Image.asset(
-//                     dataJson,
-//                     width: 200,
-//                     height: 200,
-//                   ),
-//                 ),
-//                 const SizedBox(
-//                   height: 10,
-//                 ),
-//                 Text(
-//                   dataJson,
-//                   style: const TextStyle(
-//                     fontSize: 25,
-//                     color: Colors.grey,
-//                     fontWeight: FontWeight.bold,
-//                   ),
-//                 ),
-//                 const SizedBox(
-//                   height: 10,
-//                 ),
-//                 Container(
-//                   // width: 200,
-//                   child: Align(
-//                     alignment: Alignment.center,
-//                     child: Text(
-//                       dataJson,
-//                       maxLines: 3,
-//                       style: TextStyle(fontSize: 15, color: Colors.grey[500]),
-//                       textAlign: TextAlign.center,
-//                     ),
-//                   ),
-//                 ),
-//               ],
-//             ),
-//           ),
-//         ),
-//       );
-//     },
-//   );
-// }
