@@ -12,30 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  //@override
-  // void initState() {
-  //   super.initState();
-  //   _api();
-  // }
-
-  // var dataJson;
-  // int totalData = 0;
-  // void _api() async {
-  //   Map<String, dynamic> headers = {
-  //     'Content-Type': 'application/json',
-  //     'Accept': 'application/json'
-  //   };
-
-  //   var response = await http.get(Uri.parse('http://localhost:1337/api/kois'),
-  //       headers: headers);
-
-  //   dataJson = jsonDecode(response.body);
-  //   print(dataJson["data"][0]["attributes"][0]);
-  //   setState(() {
-  //     totalData = dataJson["meta"]["pagination"]["total"];
-  //   });
-  // }
-
   final jenisController = TextEditingController();
   final jumlahController = TextEditingController();
   final imageController = TextEditingController();
@@ -69,10 +45,10 @@ class _HomePageState extends State<HomePage> {
         physics: const ScrollPhysics(),
         itemBuilder: (BuildContext context, int index) {
           return GestureDetector(
-            // onTap: () {
-            //   showDialogFunc(
-            //       context, dataJson[index], dataJson[index], dataJson[index]);
-            // },
+            onTap: () {
+              // Show the formKoi dialog when an item is tapped.
+              formKoi(koilist[index]);
+            },
             child: Card(
               child: Row(
                 children: <Widget>[
@@ -80,7 +56,11 @@ class _HomePageState extends State<HomePage> {
                   Container(
                     width: 100,
                     height: 100,
-                    //child: Image.asset(dataJson[index]),
+                    child: Image.network(
+                      koilist[index].attributes.image,
+                      width: 59,
+                      height: 59,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(10.0),
@@ -178,7 +158,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 TextFormField(
                   controller: imageController,
-                  maxLength: 20,
+                  maxLength: 100,
                   decoration: const InputDecoration(
                     labelText: 'Insert Image Link',
                     labelStyle: TextStyle(
@@ -211,7 +191,7 @@ class _HomePageState extends State<HomePage> {
               ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.grey[600],
+                backgroundColor: Colors.redAccent,
               ),
               onPressed: () {
                 Navigator.pop(context);
@@ -220,7 +200,7 @@ class _HomePageState extends State<HomePage> {
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.blueGrey,
+                backgroundColor: Colors.greenAccent,
               ),
               onPressed: () {
                 confirm = true;

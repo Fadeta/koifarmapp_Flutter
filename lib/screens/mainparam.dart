@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:koifarm/screens/parameter.dart';
+import 'package:koifarm/screens/recommendations.dart';
 
 class Params extends StatefulWidget {
   const Params({Key? key}) : super(key: key);
@@ -22,10 +23,10 @@ class _HomePageState extends State<Params> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: const [
                   Text(
-                    'HI Fadeta',
+                    'Hi Fadeta',
                     style: TextStyle(
                       fontSize: 18,
                       color: Colors.red,
@@ -39,33 +40,23 @@ class _HomePageState extends State<Params> {
                   physics: const BouncingScrollPhysics(),
                   children: [
                     const SizedBox(height: 16),
-                    const Center(
-                      child: Text(
-                        'Pantau Kolam Koi Anda!',
-                        style: TextStyle(
-                          color: Colors.red,
-                          fontSize: 32,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 48),
                     const Text(
-                      'SERVICES',
+                      'Pantau Kolam Koi Anda!',
                       style: TextStyle(
-                        fontSize: 14,
+                        color: Colors.red,
+                        fontSize: 32,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 16),
+                    const SizedBox(height: 48),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _cardMenu(
-                          icon: 'assets/images/energy.png',
-                          title: 'ENERGY',
-                        ),
+                        // _cardMenu(
+                        //   icon: 'assets/images/energy.png',
+                        //   title: 'ENERGY',
+                        // ),
                         _cardMenu(
                           onTap: () {
                             Navigator.push(
@@ -77,23 +68,34 @@ class _HomePageState extends State<Params> {
                           },
                           icon: 'assets/images/temperature.png',
                           title: 'TEMPERATURE',
-                          color: Colors.red,
+                          color: Colors.blueAccent,
                           fontColor: Colors.white,
                         ),
                       ],
                     ),
                     const SizedBox(height: 28),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        _cardMenu(
-                          icon: 'assets/images/water.png',
-                          title: 'WATER',
-                        ),
+                        // _cardMenu(
+                        //   icon: 'assets/images/water.png',
+                        //   title: 'WATER',
+                        // ),
                         _cardMenu(
                           icon: 'assets/images/rating1.png',
                           title: 'RECOMMENDATIONS',
+                          color: Colors.blueAccent,
+                          fontColor: Colors.white,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const RecommendationPage(),
+                              ),
+                            );
+                          },
                         ),
                       ],
                     ),
