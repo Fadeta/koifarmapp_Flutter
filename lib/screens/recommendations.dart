@@ -55,16 +55,37 @@ class _RecommendationPageState extends State<RecommendationPage> {
         children: <Widget>[
           // Banner at the top
           Container(
-            height: 150,
-            color: Colors.lightBlueAccent,
-            child: const Center(
-              child: Text(
-                'Banner',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+            height: 220,
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Colors.red, Color.fromARGB(255, 148, 182, 241)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/images/banner.png',
+                    fit: BoxFit.cover,
+                    width: 150,
+                    height: 150,
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  const Text(
+                    'Berikan Yang Terbaik untuk KOI Anda!',
+                    style: TextStyle(
+                      fontSize: 18,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                ],
               ),
             ),
           ),
@@ -128,7 +149,7 @@ class _RecommendationPageState extends State<RecommendationPage> {
                                 // ignore: prefer_interpolation_to_compose_strings
                                 child: Text(
                                   // ignore: prefer_interpolation_to_compose_strings
-                                  "RP" +
+                                  "RP " +
                                       dataJson["data"][index]["attributes"]
                                               ["harga"]
                                           .toString(),

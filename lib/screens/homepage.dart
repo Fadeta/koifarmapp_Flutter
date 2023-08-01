@@ -82,7 +82,8 @@ class _HomePageState extends State<HomePage> {
                         Container(
                           width: 100,
                           child: Text(
-                            koilist[index].attributes.jumlah.toString(),
+                            "Jumlah " +
+                                koilist[index].attributes.jumlah.toString(),
                             maxLines: 3,
                             style: TextStyle(
                                 fontSize: 15, color: Colors.grey[500]),
